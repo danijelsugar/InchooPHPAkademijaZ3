@@ -14,14 +14,16 @@ body {
     text-orientation: mixed;
 }
 .container-input {
+    display: flex;
     width: 50%;
 }
 .container-input form {
     display: flex;
+    width: 80%;
     flex-direction: column;
 }
 .container-input .input-wrap {
-    width: 20%;
+    width: 25%;
 }
 .container-input label {
     color: #fff;
@@ -38,11 +40,12 @@ body {
     border-right: 6px;
 }
 .container-input input[type=submit] {
-    width: 35%;
+    width: 45%;
     background: #77ac37;
     margin-top: 10px;
 }
 .container-output {
+    display: flex;
     width: 50%;
 }
 .container-output table,td {

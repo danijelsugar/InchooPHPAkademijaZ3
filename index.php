@@ -12,8 +12,8 @@
 <body>
     <div class="container-wrap">
         <div class="container">
-            <h1>Input</h1>
             <div class="container-input">
+                <h1>Input</h1>
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
                     <div class="input-wrap">
                         <label for="row">Broj redaka</label>
@@ -27,6 +27,7 @@
                 </form>
             </div>
             <div class="container-output">
+                <h1>Output</h1>
                 <table>
                     <tbody>
                     <tr>
