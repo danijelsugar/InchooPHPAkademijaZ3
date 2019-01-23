@@ -1,8 +1,12 @@
 <?php
 
-$rows = $_POST['row'];
-$columns = $_POST['column'];
-
+$rows = isset($_POST['row']) ? $_POST['row'] : 0;   //number of rows entered
+$columns = isset($_POST['column']) ? $_POST['column'] : 0; //number of columns entered
+/**
+ * @param $rows -first param, desired number of rows entered by user
+ * @param $columns -second param, desired number of columns entered by user
+ * @return array -two-dimensional array of numbers to fill $rows*$columns size table
+ */
 function doJob($rows,$columns)
 {
     $data = [];
@@ -14,13 +18,13 @@ function doJob($rows,$columns)
         $data[] = $column;
     }
 
-    $counter = 1;
+    $counter = 1;   //numbers counter
 
     $a=1; // circuit counter
 
-    while ($counter<=$rows*$columns) {
+    while ($counter<=$rows*$columns) {  //while counter is smaller than $rows*$columns
 
-        for ($i=$a-1;$i<$columns-($a-1);$i++){
+        for ($i=$a-1;$i<$columns-($a-1);$i++){ // 1. Right
             if($counter>$rows*$columns){
                 return $data;
             }
@@ -28,7 +32,7 @@ function doJob($rows,$columns)
 
         }
 
-        for($i=$a;$i<$rows-$a;$i++){
+        for($i=$a;$i<$rows-$a;$i++){    //2. Down
             if($counter>$rows*$columns){
                 return $data;
             }
@@ -36,7 +40,7 @@ function doJob($rows,$columns)
 
         }
 
-        for($i=$columns-$a; $i>=($a-1);$i--){
+        for($i=$columns-$a; $i>=($a-1);$i--){   //3. left
             if($counter>$rows*$columns){
                 return $data;
             }
@@ -44,7 +48,7 @@ function doJob($rows,$columns)
 
         }
 
-        for($i=$rows-($a+1); $i>($a-1);$i--){              
+        for($i=$rows-($a+1); $i>($a-1);$i--){   //4. up
             if($counter>$rows*$columns){
                 return $data;
             }
@@ -52,7 +56,7 @@ function doJob($rows,$columns)
         }
         $a++;
     }
-    return $data;
+    return $data;   //returnd two-dimensional array
 }
 
 $data = doJob($rows,$columns);
