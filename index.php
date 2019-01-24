@@ -60,9 +60,7 @@ function doJob($rows,$columns)
 }
 
 $data = doJob($rows,$columns);
-//echo '<pre>';
-//print_r($data);
-//echo '</pre>';
+
 
 ?>
 <!doctype html>
@@ -84,11 +82,11 @@ $data = doJob($rows,$columns);
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
                     <div class="input-wrap">
                         <label for="row">Broj redaka</label>
-                        <input type="text" name="row" id="row" value="<?php echo $rows; ?>">
+                        <input type="text" name="row" id="row" value="<?php echo $rows; ?>" autocomplete="off">
                     </div>
                     <div class="input-wrap">
                         <label for="column">Broj stupaca</label>
-                        <input type="text" name="column" id="column" value="<?php echo $columns; ?>">
+                        <input type="text" name="column" id="column" value="<?php echo $columns; ?>" autocomplete="off">
                     </div>
                     <input type="submit" value="KREIRAJ TABLICU">
                 </form>

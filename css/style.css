@@ -48,6 +48,7 @@ body {
     width: 45%;
     background: #77ac37;
     margin-top: 10px;
+    border: 1px solid #77ac37;
 }
 .container-output {
     display: flex;
