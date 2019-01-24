@@ -60,6 +60,9 @@ function doJob($rows,$columns)
 }
 
 $data = doJob($rows,$columns);
+//echo '<pre>';
+//print_r($data);
+//echo '</pre>';
 
 ?>
 <!doctype html>
